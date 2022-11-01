@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  qrcodegenerator
-//
-//  Created by Alumno on 17/10/22.
-//
-
 import UIKit
 import CoreImage.CIFilterBuiltins
 

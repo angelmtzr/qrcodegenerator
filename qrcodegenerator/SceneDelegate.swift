@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  qrcodegenerator
-//
-//  Created by Alumno on 17/10/22.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
