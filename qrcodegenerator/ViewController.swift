@@ -21,14 +21,28 @@ class ViewController: UIViewController {
     }
     
     @IBAction func generateQR(_ sender: UIButton) {
-        
+        let text = key.text
+        if (text == nil || text == "") {
+            return
+        }
+        qr.image = getQR(from: text!)
     }
     
     @IBAction func saveQR(_ sender: UIButton) {
         UIImageWriteToSavedPhotosAlbum(qr.image!, nil, nil, nil)
     }
     
-    func
-
+    func getQR(from text: String) -> UIImage {
+        filter.message = Data(text.utf8)
+        let transform = CGAffineTransform(scaleX: 10, y: 10)
+        if let outputImage = filter.outputImage?.transformed(by: transform) {
+            if let cgimg = context.createCGImage(outputImage,
+                                                 from: outputImage.extent) {
+                return UIImage(cgImage: cgimg)
+            }
+        }
+        return UIImage(systemName: "xmark.circle") ?? UIImage()
+    }
+    
 }
 
